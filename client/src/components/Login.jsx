@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Simple 'login' page that can be built out with authentication later
+// No concept of sessions yet, so on page refresh the user will need to 'relogin'
 const Login = ({ setUsername }) => {
   const submitHandler = (e) => {
     e.preventDefault(); // prevent page refresh onSubmit

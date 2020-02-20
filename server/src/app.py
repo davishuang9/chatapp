@@ -15,7 +15,7 @@ def create_app():
     app.router.add_get("/{username}/{receiver}", conversation_handler)
     app.router.add_post("/{username}/{receiver}", message_handler)
 
-    # Configure default CORS settings.
+    # Configure default CORS settings. Didn't have time to properly configure this.
     cors = aiohttp_cors.setup(
         app,
         defaults={

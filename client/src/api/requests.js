@@ -35,10 +35,9 @@ export const getConversation = (username, receiver, setConversation) => {
   );
 };
 
-// do we need a way to update conversation after a mesaage is sent?
+// The server doesn't push any updates to the client so the user will not see realtime updates of sent messages
 export const sendMessage = (username, receiver, message) => {
   if (message) {
-    console.log('sending message', message);
     makeRequest(
       'POST',
       getConversationURL(username, receiver),

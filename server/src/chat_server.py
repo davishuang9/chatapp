@@ -5,10 +5,11 @@ from chat import Chat
 
 # Initialize our chat 'database' that is keeping track of the chats
 chat = Chat()
-chat.send_message("a", "b", "hello world")
-chat.send_message("b", "a", "hello world back to you!")
 
-chat.send_message("a", "c", "i hate you")
+# You can uncomment the below lines to start the server with a few test conversations
+# chat.send_message("a", "b", "hello world")
+# chat.send_message("b", "a", "hello world back to you!")
+# chat.send_message("a", "c", "i hate you")
 
 
 # Gets all the receiver of messages from a user
