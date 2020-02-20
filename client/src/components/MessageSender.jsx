@@ -12,7 +12,9 @@ const MessageSender = ({ username, receiver }) => {
 
   return (
     <div>
-      <div>Sending message to <i>{receiver}</i>:</div>
+      <div>
+        Sending message to <i>{receiver}</i>:
+      </div>
       <form onSubmit={submitHandler}>
         <input type="text" name="message" />
         <input type="submit" value="Send Message" />

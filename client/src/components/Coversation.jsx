@@ -12,13 +12,17 @@ const Conversation = ({ username, receiver }) => {
 
   return (
     <div>
-      <div>Conversation with <i>{receiver}</i>:</div>
+      <div>
+        Conversation with <i>{receiver}</i>:
+      </div>
       {conversation.map((message, index) => {
         const [sender, message_text, timestamp] = message;
         const direction = sender === username ? 'To' : 'From';
         return (
           <div key={`${sender}-${message_text}-${timestamp}-${index}`}>
-            <div><b>{direction}</b> <i>{receiver}</i>:</div>
+            <div>
+              <b>{direction}</b> <i>{receiver}</i>:
+            </div>
             <div>{message_text}</div>
           </div>
         );

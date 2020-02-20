@@ -28,13 +28,17 @@ const Chat = ({ username }) => {
       <div>Welcome, {username}</div>
       <div>Conversations:</div>
       <ul onClick={handleClick}>
-        {receivers.map(receiver => (<li key={receiver}>{receiver}</li>))}
+        {receivers.map((receiver) => (
+          <li key={receiver}>{receiver}</li>
+        ))}
       </ul>
       <form onSubmit={submitHandler}>
         <input type="text" name="receiver" />
         <input type="submit" value="New Message" />
       </form>
-      {selectedReceiver && <Conversation username={username} receiver={selectedReceiver} />}
+      {selectedReceiver && (
+        <Conversation username={username} receiver={selectedReceiver} />
+      )}
     </div>
   );
 };
