@@ -1,3 +1,6 @@
 # venv files
 /bin
 /lib
+
+# python
+__pycache__
