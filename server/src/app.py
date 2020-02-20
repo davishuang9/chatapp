@@ -1,7 +1,7 @@
 from aiohttp import web
 import aiohttp_cors
 
-from chat_server import receivers_handler, conversation_handler
+from chat_server import receivers_handler, conversation_handler, message_handler
 
 
 def create_app():
@@ -13,8 +13,7 @@ def create_app():
     # Setup application routes.
     app.router.add_get("/{username}", receivers_handler)
     app.router.add_get("/{username}/{receiver}", conversation_handler)
-    # app.router.add_post("/{username}/{receiver}", message_handler)
-    # app.router.add_route("POST", "/hello", handler_put)
+    app.router.add_post("/{username}/{receiver}", message_handler)
 
     # Configure default CORS settings.
     cors = aiohttp_cors.setup(

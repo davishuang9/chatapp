@@ -41,18 +41,18 @@ def conversation_handler(request):
 
 # Sends a message from one user to another
 @asyncio.coroutine
-def message_handler(request):
+async def message_handler(request):
     username = request.match_info.get("username", None)
     receiver = request.match_info.get("receiver", None)
-    message = request.match_info.get("message", None)
+    message = (await request.content.read()).decode("utf-8").strip('"')
 
     if not username or not receiver or not message:
         return web.Response(
-            status=404, reason="Username/receiver and message cannot be blank"
+            status=404, reason="Username/receiver and/or message cannot be blank"
         )
 
     chat.send_message(username, receiver, message)
-    return web.Response(status=200)
+    return web.json_response({"success": True})
 
 
 if __name__ == "__main__":

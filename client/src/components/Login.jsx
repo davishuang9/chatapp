@@ -12,7 +12,7 @@ const Login = ({ setUsername }) => {
     <form onSubmit={submitHandler}>
       <label>Username:</label>
       <input type="text" name="username" />
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Login" />
     </form>
   );
 };
